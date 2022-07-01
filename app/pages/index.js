@@ -2,8 +2,34 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-//Colatz functions
-import { createData } from '../../src/colatz'
+
+function collatz(n) {
+  let sequence = [];
+  let index = 0;
+  let value = n;
+  do {
+      if (value % 2 === 0) {
+          value = value / 2;
+      } else {
+          value = 3 * value + 1;
+      }
+      sequence.push([index, value]);
+      index++;
+  } while (value !== 1);
+  return sequence;
+}
+
+function createData(n){
+  let data = [];
+  let sequence = collatz(n);
+  for (let i = 0; i < sequence.length; i++) {
+      data.push({name: sequence[i][0], y: sequence[i][1]});
+  }
+  return data;
+}
+
+
+//77031 <- Biggest collatz sequence for number under 100000
 
 //Chart
 import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
@@ -11,14 +37,11 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
 //Render the chart
 
 function DataRender(props){
-  let data = createData(props.number);
-
   return (
-    <LineChart width={600} height={300} data={data}>
+    <LineChart width={1200} height={500} data={createData(props.number)} style={{padding: 10}}>
       <Line type="monotone" dataKey="y" stroke="#8884d8" />
-      <CartesianGrid stroke="#ccc" />
       <XAxis dataKey="name" />
-      <YAxis />
+      <YAxis dataKey="y"/>
     </LineChart>
   )
 }
@@ -33,7 +56,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div>
+      <div >
        <DataRender number={77031} />
       </div>
     </div>
