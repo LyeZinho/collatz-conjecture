@@ -15,16 +15,17 @@ function collatz(n) {
     return sequence;
 }
 
-
+/*
+For each array in the sequence create a new 
+object with the index and value.
+example: {x: 0, y: 1}
+insert all the objects into an array
+*/
 function createData(n){
-    let data = {
-        x: [],
-        y: []
-    };
+    let data = [];
     let sequence = collatz(n);
     for (let i = 0; i < sequence.length; i++) {
-        data.x.push(sequence[i][0]);
-        data.y.push(sequence[i][1]);
+        data.push({name: sequence[i][0], y: sequence[i][1]});
     }
     return data;
 }
@@ -32,7 +33,7 @@ function createData(n){
 
 //77031 <- Biggest collatz sequence for number under 100000
 
-// module.exports = {
-//     collatz: collatz,
-//     createData: createData
-// };
+module.exports = {
+    collatz: collatz,
+    createData: createData
+};
