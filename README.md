@@ -11,13 +11,13 @@ times the previous term plus 1. The conjecture is that these sequences always re
 no matter which positive integer is chosen to start the sequence.
 
 It is named after mathematician Lothar Collatz, who introduced the idea in 1937, 
-two years after receiving his doctorate.[1] It is also known as the 3n + 1 problem, 
+two years after receiving his doctorate. It is also known as the 3n + 1 problem, 
 the 3n + 1 conjecture, the Ulam conjecture (after Stanisław Ulam), Kakutani's problem 
 (after Shizuo Kakutani), the Thwaites conjecture (after Sir Bryan Thwaites), Hasse's algorithm 
-(after Helmut Hasse), or the Syracuse problem.[2][4] The sequence of numbers involved is sometimes 
+(after Helmut Hasse), or the Syracuse problem. The sequence of numbers involved is sometimes 
 referred to as the hailstone sequence, hailstone numbers or hailstone numerals 
 (because the values are usually subject to multiple descents and ascents like hailstones in a cloud),
-[5][6] or as wondrous numbers.[7]
+ or as wondrous numbers.
 
 [src](https://en.wikipedia.org/wiki/Collatz_conjecture)
 
